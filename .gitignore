@@ -73,4 +73,5 @@ crashlytics-build.properties
 /Assets/Scripts/*.cs.meta
 /Assets/Sprites/*.png.meta
 /Assets/Prefabs/*.meta
+/Assets/*meta
 
