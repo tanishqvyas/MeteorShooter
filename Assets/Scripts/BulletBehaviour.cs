@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBehaviour : MonoBehaviour
 
 {
-    // public GameObject hitEffect;
+    public GameObject hitEffect;
 
     void Start()
     {
@@ -14,8 +14,13 @@ public class BulletBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         Destroy(gameObject);
+
     }
+
+
+    
 
 }

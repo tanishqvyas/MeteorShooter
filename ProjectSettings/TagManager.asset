@@ -8,6 +8,8 @@ TagManager:
   - asteroid
   - bullet
   - bgstar
+  - shieldpowerup
+  - bulleteffect
   layers:
   - Default
   - TransparentFX
