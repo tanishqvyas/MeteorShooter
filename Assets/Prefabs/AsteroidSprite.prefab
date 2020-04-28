@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8554611353071492493}
   - component: {fileID: 8554611353071492492}
   - component: {fileID: 8554611353071492495}
+  - component: {fileID: 4479422176745413340}
+  - component: {fileID: 1234173480662110164}
   m_Layer: 0
   m_Name: AsteroidSprite
   m_TagString: asteroid
@@ -98,3 +100,37 @@ CircleCollider2D:
   m_Offset: {x: -0.020922927, y: 0.017974343}
   serializedVersion: 2
   m_Radius: 1.3027666
+--- !u!114 &4479422176745413340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554611353071492494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476d5ceb9725cba1cac5330573ad8ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeCount: 3
+--- !u!50 &1234173480662110164
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554611353071492494}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 2
+  m_AngularDrag: 0.2
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

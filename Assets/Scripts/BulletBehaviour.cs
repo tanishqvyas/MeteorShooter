@@ -14,7 +14,6 @@ public class BulletBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision);
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
