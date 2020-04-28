@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeCount: 3
+  destroyEffect: {fileID: 8939068676114526091, guid: 49eeee6d7058b2470bcd7a5f5c0ef0fc,
+    type: 3}
 --- !u!50 &1234173480662110164
 Rigidbody2D:
   serializedVersion: 4
