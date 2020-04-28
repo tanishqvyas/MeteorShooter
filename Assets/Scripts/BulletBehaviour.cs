@@ -9,11 +9,12 @@ public class BulletBehaviour : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision);
         //GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
