@@ -70,8 +70,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # All meta files
-/Assets/Scripts/*.cs.meta
-/Assets/Sprites/*.png.meta
+/Assets/Scripts/*.meta
+/Assets/Sprites/*.meta
 /Assets/Prefabs/*.meta
 /Assets/*meta
+/Assets/Sounds/*.meta
 
