@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collectibles : MonoBehaviour
 {
-    public float life = 100f;
-    
+
+    [HideInInspector]
+    public GameObject shield;
+
+    //Inspector variables
+    public GameObject shieldPrefab;
+   
     [HideInInspector]
     public float shieldLife = 0f;
 
@@ -19,9 +25,16 @@ public class Collectibles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(shieldLife <= 0)
+        {
+
+        }
+
+        // set healthbar
     }
 
+
+    // Manage Collectibles and collision damage
     void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -31,8 +44,13 @@ public class Collectibles : MonoBehaviour
         // MANAGE COLLECTIBLES
         if(collision.gameObject.tag == "shieldpowerup")
         {   
-            // write code for shield here
+            // Destroy the shield collectible
             Destroy(collision.gameObject);
+
+            //Instantiate the shield prefab and assign spaceship as parent
+            shield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+            shield.transform.parent = gameObject.transform;
+
             shieldLife = 50f;
             Debug.Log(shieldLife);
         }
