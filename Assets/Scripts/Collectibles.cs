@@ -52,7 +52,11 @@ public class Collectibles : MonoBehaviour
             curWeaponCount.text = count.ToString();
         }
 
+        // Keep updating the count
         curWeaponCount.text = weapons[curWeaponName].ToString();
+
+
+        // Firing mechanism and count of weapons handling
 
     }
 
