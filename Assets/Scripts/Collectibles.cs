@@ -7,7 +7,7 @@ public class Collectibles : MonoBehaviour
     public float life = 100f;
     
     [HideInInspector]
-    private float shieldLife = 0f;
+    public float shieldLife = 0f;
 
 
     // Start is called before the first frame update
