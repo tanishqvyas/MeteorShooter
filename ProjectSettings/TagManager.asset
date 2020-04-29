@@ -10,6 +10,9 @@ TagManager:
   - bgstar
   - shieldpowerup
   - bulleteffect
+  - healthpowerup
+  - orbofosuvoxpowerup
+  - missilepowerup
   layers:
   - Default
   - TransparentFX

@@ -15,22 +15,45 @@ public class Collectibles : MonoBehaviour
     [HideInInspector]
     public float shieldLife = 0f;
 
+    // Initialize weapon system
+    public static string[] weaponNames = new string[] {"missile", "orb"};
+    public static int numOfWeapons = weaponNames.Length;
+    private static int curWeaponIndex = 0;
+    public string curWeaponName = weaponNames[curWeaponIndex];
+    public Dictionary<string, int> weapons = new Dictionary<string, int>();
+    public Dictionary<string, Sprite> spriteList = new Dictionary<string, Sprite>();
+    public Image weaponImage;
+    public Text curWeaponCount;
+
+    public Sprite missileSprite;
+    public Sprite orbSprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        weapons["orb"] = 0;
+        weapons["missile"] = 0;
+
+        spriteList["orb"] = orbSprite;
+        spriteList["missile"] = missileSprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(shieldLife <= 0)
+        if(Input.GetKeyDown(KeyCode.C))
         {
+            curWeaponIndex = (curWeaponIndex + 1) % numOfWeapons;
 
+            // Fetch new count and new image
+            curWeaponName = weaponNames[curWeaponIndex];
+            int count = weapons[curWeaponName];
+            weaponImage.sprite = spriteList[curWeaponName];
+            curWeaponCount.text = count.ToString();
         }
 
-        // set healthbar
+        curWeaponCount.text = weapons[curWeaponName].ToString();
+
     }
 
 
@@ -60,9 +83,28 @@ public class Collectibles : MonoBehaviour
             // write code for refueling here
         }
 
-        else if(collision.gameObject.tag == "healthpack")
+        else if(collision.gameObject.tag == "healthpowerup")
         {
-            // write code to increase heal here
+            // Destroy the shield collectible
+            Destroy(collision.gameObject);
+        }
+
+        else if(collision.gameObject.tag == "orbofosuvoxpowerup")
+        {
+            // Destroy the shield collectible
+            Destroy(collision.gameObject);
+
+            // Add in the arsenal
+            weapons["orb"] += 1;
+        }
+
+        else if(collision.gameObject.tag == "missilepowerup")
+        {
+            // Destroy the shield collectible
+            Destroy(collision.gameObject);
+
+            // Add in the arsenal
+            weapons["missile"] += 1;
         }
 
     }
