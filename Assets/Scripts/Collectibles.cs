@@ -16,6 +16,7 @@ public class Collectibles : MonoBehaviour
     public float shieldLife = 0f;
 
     // Initialize weapon system
+    // public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackholemaker"};
     public static string[] weaponNames = new string[] {"missile", "orb"};
     public static int numOfWeapons = weaponNames.Length;
     private static int curWeaponIndex = 0;
@@ -25,14 +26,30 @@ public class Collectibles : MonoBehaviour
     public Image weaponImage;
     public Text curWeaponCount;
 
+    // Sprites of the weapons
     public Sprite missileSprite;
     public Sprite orbSprite;
+    // public Sprite mineSprite;
+    // public Sprite lazerSprite
+    // public Sprite blackHoleSprite;
+
+    // Weapon prefabs
+    public GameObject lazerPrefab;
+    public GameObject missilePrefab;
+
+
+    // Animations of the collectibles
+
+
+    // Hit effects of the weapons
+
 
     // Start is called before the first frame update
     void Start()
     {
         weapons["orb"] = 0;
         weapons["missile"] = 0;
+        
 
         spriteList["orb"] = orbSprite;
         spriteList["missile"] = missileSprite;
@@ -57,7 +74,28 @@ public class Collectibles : MonoBehaviour
 
 
         // Firing mechanism and count of weapons handling
+        if(Input.GetKeyDown(KeyCode.F) && weapons[curWeaponName] > 0)
+        {       
+            if(curWeaponName != "lazer")
+            {
+                    weapons[curWeaponName] -= 1;
+                    shoot(curWeaponName);
+            }
+        }
 
+    }
+
+
+    public void shoot(string weaponName)
+    {
+        if(weaponName == "lazer")
+        {
+            GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firepoint.up * bulletForce,ForceMode2D.Impulse);
+            Destroy(bullet,2f);
+
+        }
     }
 
 
