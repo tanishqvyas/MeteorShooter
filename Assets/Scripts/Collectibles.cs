@@ -17,9 +17,9 @@ public class Collectibles : MonoBehaviour
 
     // Initialize weapon system
     // public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackholemaker"};
-    public static string[] weaponNames = new string[] {"missile", "orb"};
+    public static string[] weaponNames = new string[] {"missile", "orb", "lazer"};
     public static int numOfWeapons = weaponNames.Length;
-    private static int curWeaponIndex = 0;
+    private static int curWeaponIndex = 2;
     public string curWeaponName = weaponNames[curWeaponIndex];
     public Dictionary<string, int> weapons = new Dictionary<string, int>();
     public Dictionary<string, Sprite> spriteList = new Dictionary<string, Sprite>();
@@ -30,11 +30,14 @@ public class Collectibles : MonoBehaviour
     public Sprite missileSprite;
     public Sprite orbSprite;
     // public Sprite mineSprite;
-    // public Sprite lazerSprite
+    public Sprite lazerSprite;
     // public Sprite blackHoleSprite;
 
     // Weapon prefabs
     public GameObject lazerPrefab;
+    private float bulletForce = 8f;
+
+    public Transform firepoint;
     public GameObject missilePrefab;
 
 
@@ -47,12 +50,14 @@ public class Collectibles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        weapons["lazer"] = 12;
         weapons["orb"] = 0;
         weapons["missile"] = 0;
         
 
         spriteList["orb"] = orbSprite;
         spriteList["missile"] = missileSprite;
+        spriteList["lazer"] = lazerSprite;
     }
 
     // Update is called once per frame
@@ -66,21 +71,29 @@ public class Collectibles : MonoBehaviour
             curWeaponName = weaponNames[curWeaponIndex];
             int count = weapons[curWeaponName];
             weaponImage.sprite = spriteList[curWeaponName];
-            curWeaponCount.text = count.ToString();
+            if(curWeaponName != "lazer")
+                curWeaponCount.text = count.ToString();
+            else
+                curWeaponCount.text = "♾️";
+                            
         }
 
         // Keep updating the count
-        curWeaponCount.text = weapons[curWeaponName].ToString();
 
+        if(curWeaponName != "lazer")
+            curWeaponCount.text = weapons[curWeaponName].ToString();
+        else
+            curWeaponCount.text = "♾️";
 
         // Firing mechanism and count of weapons handling
-        if(Input.GetKeyDown(KeyCode.F) && weapons[curWeaponName] > 0)
+        if(Input.GetButtonDown("Fire1") && weapons[curWeaponName] > 0)
         {       
+            Debug.Log(curWeaponName);
             if(curWeaponName != "lazer")
             {
                     weapons[curWeaponName] -= 1;
-                    shoot(curWeaponName);
             }
+            shoot(curWeaponName);
         }
 
     }
@@ -90,10 +103,18 @@ public class Collectibles : MonoBehaviour
     {
         if(weaponName == "lazer")
         {
-            GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+            GameObject bullet = Instantiate(lazerPrefab, firepoint.position, firepoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * bulletForce,ForceMode2D.Impulse);
             Destroy(bullet,2f);
+
+        }
+
+        else if(weaponName == "missile")
+        {
+            GameObject myMissile = Instantiate(missilePrefab, firepoint.position, firepoint.rotation);
+            Rigidbody2D rb = myMissile.GetComponent<Rigidbody2D>();
+            rb.AddForce(firepoint.up * 2f,ForceMode2D.Impulse);
 
         }
     }

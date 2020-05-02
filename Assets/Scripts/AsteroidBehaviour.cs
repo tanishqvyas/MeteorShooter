@@ -23,8 +23,6 @@ public class AsteroidBehaviour : MonoBehaviour
         {   
             // Get the name
             string asteroidName = gameObject.tag;
-
-            Debug.Log(asteroidName);
             
             // Destroy the current asteroid
             Destroy(gameObject);
