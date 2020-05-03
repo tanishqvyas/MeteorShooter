@@ -52,7 +52,7 @@ public class Collectibles : MonoBehaviour
     {
         weapons["lazer"] = 12;
         weapons["orb"] = 0;
-        weapons["missile"] = 0;
+        weapons["missile"] = 100;
         
 
         spriteList["orb"] = orbSprite;

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  missileSpeed: 7
+  missileSpeed: 5
   rotateSpeed: 300
   targetNames:
   - healthpowerup
