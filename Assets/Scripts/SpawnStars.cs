@@ -11,6 +11,14 @@ public class SpawnStars : MonoBehaviour
     public GameObject asteroid2;
     public GameObject asteroid1;
 
+    public GameObject healthCollectiblePrefab;
+    public GameObject mineCollectiblePrefab;
+    public GameObject missileCollectiblePrefab;
+    public GameObject shieldCollectiblePrefab;
+    public GameObject orbCollectiblePrefab;
+    public GameObject blackholeCollectiblePrefab;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +55,49 @@ public class SpawnStars : MonoBehaviour
             Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
 
             Instantiate(asteroid1, pos , Quaternion.identity);
+        }
+
+        // Spawn Collectibles --------------------------------------------------------->
+        for (int i = 0; i < 10; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(healthCollectiblePrefab, pos , Quaternion.identity);
+        }
+
+        for (int i = 0; i < 0; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(mineCollectiblePrefab, pos , Quaternion.identity);
+        }
+
+        for (int i = 0; i < 0; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(missileCollectiblePrefab, pos , Quaternion.identity);
+        }
+        
+        for (int i = 0; i < 0; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(shieldCollectiblePrefab, pos , Quaternion.identity);
+        }
+
+        for (int i = 0; i < 0; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(orbCollectiblePrefab, pos , Quaternion.identity);
+        }
+
+        for (int i = 0; i < 0; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+
+            Instantiate(blackholeCollectiblePrefab, pos , Quaternion.identity);
         }
 
 

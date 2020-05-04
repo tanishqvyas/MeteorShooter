@@ -17,6 +17,8 @@ TagManager:
   - asteroid3
   - asteroid4
   - asteroid
+  - blackholepowerup
+  - minepowerup
   layers:
   - Default
   - TransparentFX
@@ -53,4 +55,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: doofus
+    uniqueID: 1360158821
     locked: 0

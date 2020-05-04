@@ -17,7 +17,7 @@ public class Collectibles : MonoBehaviour
 
     // Initialize weapon system
     // public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackholemaker"};
-    public static string[] weaponNames = new string[] {"missile", "orb", "lazer"};
+    public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackhole"};
     public static int numOfWeapons = weaponNames.Length;
     private static int curWeaponIndex = 2;
     public string curWeaponName = weaponNames[curWeaponIndex];
@@ -29,9 +29,9 @@ public class Collectibles : MonoBehaviour
     // Sprites of the weapons
     public Sprite missileSprite;
     public Sprite orbSprite;
-    // public Sprite mineSprite;
+    public Sprite mineSprite;
     public Sprite lazerSprite;
-    // public Sprite blackHoleSprite;
+    public Sprite blackHoleSprite;
 
     // Weapon prefabs
     public GameObject lazerPrefab;
@@ -50,14 +50,18 @@ public class Collectibles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapons["lazer"] = 12;
-        weapons["orb"] = 0;
         weapons["missile"] = 100;
+        weapons["orb"] = 0;
+        weapons["lazer"] = 12;
+        weapons["mine"] = 0;
+        weapons["blackhole"] = 0;
         
 
         spriteList["orb"] = orbSprite;
         spriteList["missile"] = missileSprite;
         spriteList["lazer"] = lazerSprite;
+        spriteList["mine"] = mineSprite;
+        spriteList["blackhole"] = blackHoleSprite;
     }
 
     // Update is called once per frame
@@ -83,7 +87,7 @@ public class Collectibles : MonoBehaviour
         if(curWeaponName != "lazer")
             curWeaponCount.text = weapons[curWeaponName].ToString();
         else
-            curWeaponCount.text = "♾️";
+            curWeaponCount.text = "inf";
 
         // Firing mechanism and count of weapons handling
         if(Input.GetButtonDown("Fire1") && weapons[curWeaponName] > 0)
@@ -169,6 +173,26 @@ public class Collectibles : MonoBehaviour
             // Add in the arsenal
             weapons["missile"] += 1;
         }
+
+        else if(collision.gameObject.tag == "minepowerup")
+        {
+            // Destroy the shield collectible
+            Destroy(collision.gameObject);
+
+            // Add in the arsenal
+            weapons["mine"] += 1;
+        }
+
+        else if(collision.gameObject.tag == "blackholepowerup")
+        {
+            // Destroy the shield collectible
+            Destroy(collision.gameObject);
+
+            // Add in the arsenal
+            weapons["blackhole"] += 1;
+        }
+
+
 
     }
 }
