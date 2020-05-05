@@ -11,6 +11,10 @@ public class PlayerStats : MonoBehaviour
     // CLass variable from HealthBar script
     public HealthBar healthbar;
 
+    // Dead menu
+    public GameObject deadMenuUI;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +27,23 @@ public class PlayerStats : MonoBehaviour
     {
         healthbar.SetHealth(curHealth);
         
-        // // Testing for healthbar
-        // if(Input.GetKeyDown(KeyCode.L))
-        // {
-        //     curHealth -= 3;
-        //     healthbar.SetHealth(curHealth);
-        // }        
+        // Testing for healthbar
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            curHealth -= 30;
+            healthbar.SetHealth(curHealth);
+        }
+
+        if(curHealth <= 0)
+        {
+            Debug.Log("Ded");
+            // Enable the pause screen ui element in canvas
+            deadMenuUI.SetActive(true);
+
+            // Freeze time in game
+            Time.timeScale = 0f;
+
+        }        
     }
 
 

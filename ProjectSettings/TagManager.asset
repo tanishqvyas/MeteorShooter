@@ -60,3 +60,6 @@ TagManager:
   - name: doofus
     uniqueID: 1360158821
     locked: 0
+  - name: background
+    uniqueID: 2044169309
+    locked: 0
