@@ -12,8 +12,6 @@ public class Collectibles : MonoBehaviour
     //Inspector variables
     public GameObject shieldPrefab;
    
-    [HideInInspector]
-    public float shieldLife = 0f;
 
     // Initialize weapon system
     // public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackholemaker"};
@@ -93,7 +91,6 @@ public class Collectibles : MonoBehaviour
         // Firing mechanism and count of weapons handling
         if(Input.GetButtonDown("Fire1") && weapons[curWeaponName] > 0)
         {       
-            Debug.Log(curWeaponName);
             if(curWeaponName != "lazer")
             {
                     weapons[curWeaponName] -= 1;
@@ -133,33 +130,20 @@ public class Collectibles : MonoBehaviour
 
 
         // MANAGE COLLECTIBLES
-        if(collision.gameObject.tag == "shieldpowerup")
-        {   
-            // Destroy the shield collectible
-            Destroy(collision.gameObject);
-
-            //Instantiate the shield prefab and assign spaceship as parent
-            shield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
-            shield.transform.parent = gameObject.transform;
-
-            shieldLife = 50f;
-            Debug.Log(shieldLife);
-        }
-
-        else if(collision.gameObject.tag == "fuel")
+        if(collision.gameObject.tag == "fuel")
         {
             // write code for refueling here
         }
 
         else if(collision.gameObject.tag == "healthpowerup")
         {
-            // Destroy the shield collectible
+            // Destroy the collectible
             Destroy(collision.gameObject);
         }
 
         else if(collision.gameObject.tag == "orbofosuvoxpowerup")
         {
-            // Destroy the shield collectible
+            // Destroy the collectible
             Destroy(collision.gameObject);
 
             // Add in the arsenal
@@ -168,7 +152,7 @@ public class Collectibles : MonoBehaviour
 
         else if(collision.gameObject.tag == "missilepowerup")
         {
-            // Destroy the shield collectible
+            // Destroy the collectible
             Destroy(collision.gameObject);
 
             // Add in the arsenal
