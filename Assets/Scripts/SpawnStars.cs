@@ -24,35 +24,35 @@ public class SpawnStars : MonoBehaviour
     {
         for (int i = 0; i < 10000; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(starPrefab, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 10; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(asteroid4, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 20; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(asteroid3, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 50; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(asteroid2, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 500; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(asteroid1, pos , Quaternion.identity);
         }
@@ -60,42 +60,42 @@ public class SpawnStars : MonoBehaviour
         // Spawn Collectibles --------------------------------------------------------->
         for (int i = 0; i < 10; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(healthCollectiblePrefab, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 0; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(mineCollectiblePrefab, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 0; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(missileCollectiblePrefab, pos , Quaternion.identity);
         }
         
         for (int i = 0; i < 0; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(shieldCollectiblePrefab, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 0; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(orbCollectiblePrefab, pos , Quaternion.identity);
         }
 
         for (int i = 0; i < 0; i++)
         {
-            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-120f, 120f));
+            Vector2 pos = new Vector2(Random.Range(-42f, 850f), Random.Range(-100f, 120f));
 
             Instantiate(blackholeCollectiblePrefab, pos , Quaternion.identity);
         }

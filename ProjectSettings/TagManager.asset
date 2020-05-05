@@ -19,6 +19,7 @@ TagManager:
   - asteroid
   - blackholepowerup
   - minepowerup
+  - enemy
   layers:
   - Default
   - TransparentFX

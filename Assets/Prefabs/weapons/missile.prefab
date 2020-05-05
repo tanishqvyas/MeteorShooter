@@ -147,7 +147,7 @@ MonoBehaviour:
   missileSpeed: 5
   rotateSpeed: 300
   targetNames:
-  - healthpowerup
+  - enemy
   - asteroid1
   - asteroid2
   - asteroid3

@@ -17,10 +17,10 @@ public class Collectibles : MonoBehaviour
 
     // Initialize weapon system
     // public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackholemaker"};
-    public static string[] weaponNames = new string[] {"missile", "orb", "lazer", "mine", "blackhole"};
+    public static string[] weaponNames = new string[] {"lazer", "missile", "orb", "mine", "blackhole"};
     public static int numOfWeapons = weaponNames.Length;
-    private static int curWeaponIndex = 2;
-    public string curWeaponName = weaponNames[curWeaponIndex];
+    private static int curWeaponIndex = 0;
+    public static string curWeaponName = weaponNames[curWeaponIndex];
     public Dictionary<string, int> weapons = new Dictionary<string, int>();
     public Dictionary<string, Sprite> spriteList = new Dictionary<string, Sprite>();
     public Image weaponImage;
@@ -50,6 +50,7 @@ public class Collectibles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // weaponImage.sprite = spriteList[curWeaponName];
         weapons["missile"] = 100;
         weapons["orb"] = 0;
         weapons["lazer"] = 12;
@@ -78,7 +79,7 @@ public class Collectibles : MonoBehaviour
             if(curWeaponName != "lazer")
                 curWeaponCount.text = count.ToString();
             else
-                curWeaponCount.text = "♾️";
+                curWeaponCount.text = "ꝏ";
                             
         }
 
@@ -87,7 +88,7 @@ public class Collectibles : MonoBehaviour
         if(curWeaponName != "lazer")
             curWeaponCount.text = weapons[curWeaponName].ToString();
         else
-            curWeaponCount.text = "inf";
+            curWeaponCount.text = "ꝏ";
 
         // Firing mechanism and count of weapons handling
         if(Input.GetButtonDown("Fire1") && weapons[curWeaponName] > 0)
