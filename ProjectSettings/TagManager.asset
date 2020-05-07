@@ -20,6 +20,7 @@ TagManager:
   - blackholepowerup
   - minepowerup
   - enemy
+  - mine
   layers:
   - Default
   - TransparentFX

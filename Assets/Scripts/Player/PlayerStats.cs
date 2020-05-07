@@ -90,7 +90,6 @@ public class PlayerStats : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.relativeVelocity.magnitude > 2)
         {
             if(collision.gameObject.tag == "boundary" || collision.gameObject.tag == "asteroid1" || collision.gameObject.tag == "asteroid2" || collision.gameObject.tag == "asteroid3" || collision.gameObject.tag == "asteroid4" )

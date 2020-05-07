@@ -979,9 +979,10 @@ MonoBehaviour:
   healthbar: {fileID: 1981448676}
   maxShieldHealth: 40
   curShieldHealth: 0
+  shieldbar: {fileID: 1840717166}
   shieldPrefab: {fileID: 1516385179833438827, guid: 4978b21b30826434f8b66aca1d588d4d,
     type: 3}
-  shieldbar: {fileID: 1840717166}
+  shipShield: {fileID: 0}
   deadMenuUI: {fileID: 543287843}
 --- !u!1 &551904956
 GameObject:
@@ -1400,7 +1401,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799506879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 843be59e68568d1d78f909267de01826, type: 3}
   m_Name: 
@@ -3954,7 +3955,7 @@ PrefabInstance:
     - target: {fileID: 4556706303723961477, guid: 4626c2d1190a4f1c09990330c5fb1adb,
         type: 3}
       propertyPath: sounds.Array.data[0].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4556706303723961477, guid: 4626c2d1190a4f1c09990330c5fb1adb,
         type: 3}
@@ -4318,6 +4319,12 @@ PrefabInstance:
       propertyPath: mineSprite
       value: 
       objectReference: {fileID: 21300000, guid: 0207f0d2a0bda321a88e0e1207596d65,
+        type: 3}
+    - target: {fileID: 8910406458925675083, guid: f879ed799cb5f87108034982438aa6cd,
+        type: 3}
+      propertyPath: minePrefab
+      value: 
+      objectReference: {fileID: 6164862167807792934, guid: b0c7bcb5de004f539818e5f4cd2f4e52,
         type: 3}
     - target: {fileID: 8910406458925675085, guid: f879ed799cb5f87108034982438aa6cd,
         type: 3}

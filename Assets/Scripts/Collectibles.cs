@@ -38,6 +38,8 @@ public class Collectibles : MonoBehaviour
     public Transform firepoint;
     public GameObject missilePrefab;
 
+    public GameObject minePrefab;
+
 
     // Animations of the collectibles
 
@@ -52,7 +54,7 @@ public class Collectibles : MonoBehaviour
         weapons["missile"] = 100;
         weapons["orb"] = 0;
         weapons["lazer"] = 12;
-        weapons["mine"] = 0;
+        weapons["mine"] = 100;
         weapons["blackhole"] = 0;
         
 
@@ -118,6 +120,13 @@ public class Collectibles : MonoBehaviour
             Rigidbody2D rb = myMissile.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * 2f,ForceMode2D.Impulse);
 
+        }
+
+        else if(weaponName == "mine")
+        {
+            GameObject myMine = Instantiate(minePrefab, firepoint.position, firepoint.rotation);
+            Rigidbody2D rb = myMine.GetComponent<Rigidbody2D>();
+            rb.AddForce(firepoint.up * 2f,ForceMode2D.Impulse);
         }
     }
 
